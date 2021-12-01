@@ -109,7 +109,7 @@ const HomeImageGrid = ({stateChange = f=>f, setLink=f=>f, toCompare=f=>f, column
             return grid_array;
         }
         return(
-            <Container>
+            <Container className="margin">
             {
                     rows(column_length,decoded_array, columnCount)
             }
