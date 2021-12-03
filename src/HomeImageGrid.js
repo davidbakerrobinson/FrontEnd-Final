@@ -18,7 +18,7 @@ function food_object(food_type, cuisine_name) {
 }
 
 function to_url(food_type, to_skip) {
-    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=57274b4371364b7dac7808cbe1bcb253&type=${food_type}&offset=${to_skip}&addRecipeInformation=true&addRecipeNutrition=true&number=1`;
+    let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=145e78a54cd247a3aa402896abfbbc1a&type=${food_type}&offset=${to_skip}&addRecipeInformation=true&addRecipeNutrition=true&number=1`;
     return url;
 }
 

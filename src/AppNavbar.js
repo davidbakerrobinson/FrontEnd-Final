@@ -48,7 +48,7 @@ const AppNavbar = ({changeRecipe=f=>f}) => {
           <Button type="submit" variant="outline-success">Search</Button>
         </Form>
       </Container>
-      {Searched && <Redirect to="https://davidbakerrobinson.github.io/FrontEnd-Final/#/recipe" / >}
+      {Searched && <Redirect to="/recipe" />}
     </Navbar>
   );
 }
