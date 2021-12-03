@@ -6,7 +6,7 @@ import Home from './Home';
 import MacroCalculator from './MacroCalculator';
 import Recipe from './Recipe'
 import Ingredient from './Ingredient'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container } from 'react-bootstrap';
 import Compare from "./Compare";
@@ -30,26 +30,26 @@ function App() {
 
   return (
     <Container className="mt-3 mb-3">
-      <Router>
+      <Router basename="/FrontEnd-Final">
         <AppNavbar changeRecipe={(recipe) => setrecipeInfo(recipe)} />
         <div className="content mt-3">
           <Switch>
-            <Route path="/FrontEnd-Final/">
+            <Route exact path="/">
               <Home setLink={(info)=>setrecipeInfo(info)}  compare={compare} setCompare={setCompare} info={recipeInfo} column_count={3} />
             </Route>
-            <Route path="/FrontEnd-Final/recipe">
+            <Route path="/recipe">
               <Recipe
                 info={recipeInfo}
                 changeIngredient={(ingredient) => setIngredientName(ingredient)}
                />
             </Route>
-            <Route path="FrontEnd-Final/compare">
+            <Route path="/compare">
               <Compare compare={compare} />
             </Route>
-            <Route path="FrontEnd-Final/ingredient/">
+            <Route path="/ingredient/">
               <Ingredient ingredientName={ingredientName} />
             </Route>
-            <Route path="FrontEnd-Final/macro-calculator">
+            <Route path="/macro-calculator">
               <MacroCalculator />
             </Route>
           </Switch>
