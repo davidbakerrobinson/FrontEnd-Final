@@ -34,7 +34,7 @@ function App() {
         <AppNavbar changeRecipe={(recipe) => setrecipeInfo(recipe)} />
         <div className="content mt-3">
           <Switch>
-            <Route exact path="/">
+            <Route path="/">
               <Home setLink={(info)=>setrecipeInfo(info)}  compare={compare} setCompare={setCompare} info={recipeInfo} column_count={3} />
             </Route>
             <Route path="/recipe">
