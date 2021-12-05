@@ -3,6 +3,7 @@ import { Navbar, Form, FormControl } from 'react-bootstrap'
 import useSearch from "./useSearch";
 import { Redirect } from "react-router-dom";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 function to_url(query) {
@@ -14,7 +15,7 @@ function to_url(query) {
 const AppNavbar = ({changeRecipe=f=>f}) => {
   let [searchProps, resetSearch] = useSearch("");
   let [Searched, setSearched] = useState(false);
-
+  const history = useHistory();
 
 
   const searchSubmit = (event) => {
@@ -28,6 +29,7 @@ const AppNavbar = ({changeRecipe=f=>f}) => {
       alert(`Error occurred with request: ${error}`)
     })
     setSearched(true);
+    history.push("https://davidbakerrobinson.github.io/FrontEnd-Final/#/recipe");
     resetSearch();
   }
 
@@ -48,7 +50,7 @@ const AppNavbar = ({changeRecipe=f=>f}) => {
           <Button type="submit" variant="outline-success">Search</Button>
         </Form>
       </Container>
-      {Searched && <Redirect to="/recipe" />}
+      {/* {Searched && <Redirect to="/recipe" />} */}
     </Navbar>
   );
 }
