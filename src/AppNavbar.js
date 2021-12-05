@@ -29,7 +29,7 @@ const AppNavbar = ({changeRecipe=f=>f}) => {
       alert(`Error occurred with request: ${error}`)
     })
     setSearched(true);
-    history.push("https://davidbakerrobinson.github.io/FrontEnd-Final/#/recipe");
+    history.push("/recipe");
     resetSearch();
   }
 
